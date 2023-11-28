@@ -1,6 +1,6 @@
 import csv 
 import typing
-from typing import List, OrderedDict
+from typing import List, OrderedDict, Tuple
 import sys
 # person is a dict {conc1, conc2, house, academic year}
 # data has the same fields, but also has a 'name' field
@@ -22,8 +22,8 @@ def identifyIndividual(person: dict, data: List[OrderedDict]):
     return matches
 
 
-def uniqueMatches(matches: List):
-    # returns a list of the names of the people who match exactly one person
+def uniqueMatches(matches: List[Tuple]) -> List[Tuple]:
+    # returns a list of the names of the people who match exactly one person, and the row they match
     # if no one matches, returns an empty list
     uniqueMatches = []
     for match in matches:
@@ -33,7 +33,9 @@ def uniqueMatches(matches: List):
 
 
 def main():
-    assert(len(sys.argv) == 3)
+    if len(sys.argv) != 3:
+        print('Usage: python3 identifier.py facebookFile surveyFile')
+        exit()
     facebookFile = sys.argv[1]
     surveyFile = sys.argv[2]
     # read in the data
