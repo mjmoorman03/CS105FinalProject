@@ -7,6 +7,7 @@ import sys
 
 def match(person1: dict, person2: dict):
     ''' true iff fields match '''
+    # doesn't just check person1 == person2 bc person2 has a name field
     matched = person1['conc1'] == person2['conc1'] \
                 and person1['conc2'] == person2['conc2'] \
                 and person1['house'] == person2['house'] \
