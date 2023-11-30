@@ -8,10 +8,10 @@ import sys
 def match(person1: dict, person2: dict):
     ''' true iff fields match '''
     # doesn't just check person1 == person2 bc person2 has a name field
-    matched = person1['conc1'] == person2['conc1'] \
-                and person1['conc2'] == person2['conc2'] \
-                and person1['house'] == person2['house'] \
-                and person1['academic year'] == person2['academic year']
+    matched = person1['Concentration 1'] == person2['Concentration 1'] \
+                and person1['Concentration 2'] == person2['Concentration 2'] \
+                and person1['House'] == person2['House'] \
+                and person1['Year'] == person2['Year']
     return matched
 
 
@@ -55,3 +55,6 @@ def main():
     print(f'Out of {len(surveyData)} responses')
     f.close()
     s.close()
+
+if __name__ == '__main__':
+    main()
