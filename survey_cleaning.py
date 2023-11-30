@@ -31,6 +31,7 @@ with open(filename, 'r') as csvfile:
 header = rows[0]
 header[1] = "Concentration 1"
 header[2] = "Concentration 2"
+header[5] = "Year"
 
 # Write the cleaned rows to a new CSV file
 output_filename = f"{filename.split('.')[0]}_cleaned.csv"

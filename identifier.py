@@ -1,6 +1,6 @@
 import csv 
 import typing
-from typing import List, OrderedDict, Tuple
+from typing import List, Tuple
 import sys
 # person is a dict {conc1, conc2, house, academic year}
 # data has the same fields, but also has a 'name' field
@@ -15,7 +15,7 @@ def match(person1: dict, person2: dict):
     return matched
 
 
-def identifyIndividual(person: dict, data: List[OrderedDict]):
+def identifyIndividual(person: dict, data):
     # returns a list of the names of the people who match the person
     # if no one matches, returns an empty list
     matches = [p['name'] for p in data if match(person, p)]
