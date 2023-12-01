@@ -18,7 +18,7 @@ def match(person1: dict, person2: dict):
 def identifyIndividual(person: dict, data):
     # returns a list of the names of the people who match the person
     # if no one matches, returns an empty list
-    matches = [p['name'] for p in data if match(person, p)]
+    matches = [p['Name'] for p in data if match(person, p)]
     return matches
 
 
@@ -39,9 +39,9 @@ def main():
     facebookFile = sys.argv[1]
     surveyFile = sys.argv[2]
     # read in the data
-    f = open(facebookFile, 'r')
+    f = open(facebookFile, 'r', encoding='utf-8-sig')
     facebookData = list(csv.DictReader(f))
-    s = open(surveyFile, 'r')
+    s = open(surveyFile, 'r', encoding='utf-8-sig')
     surveyData = list(csv.DictReader(s))
     # identify people
     # list of tuples, (personData, [names])

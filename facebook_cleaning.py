@@ -21,7 +21,7 @@ with open(filename, 'r') as csvfile:
 
 # Rename the columns
 header = rows[0]
-header.append('Concentration 2')
+header[5] = 'Concentration 2'
 header[4] = 'Concentration 1'
 
 # Write the cleaned rows to a new CSV file

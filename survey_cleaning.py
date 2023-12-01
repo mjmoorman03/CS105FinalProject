@@ -15,10 +15,8 @@ def remove_quotes(s):
 
 # Clean and rename the columns
 def clean_row(row):
-    row[0] = remove_quotes(row[0])
-    row[1] = remove_quotes(row[1])
-    row[2] = remove_quotes(row[2])
-    row[3] = remove_quotes(row[3])
+    for i in range(len(row)):
+        row[i] = remove_quotes(row[i])
     row[6] = row[6].replace(" House", "")
     return row
 
