@@ -52,11 +52,11 @@ def result():
         'House': house[:-6],
         'Year': year
     }
-    print(person)
+    # print(person)
     # Call the identifyIndividual() function
     matches = identifyIndividual(person)
     # Render the results template with the matches
-    return render_template('result.html', numMatches=str(len(matches)))
+    return render_template('result.html', numMatches=str(len(matches)), person=person)
 
 if __name__ == '__main__':
     # Define your data

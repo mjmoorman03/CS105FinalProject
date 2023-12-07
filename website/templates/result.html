@@ -64,6 +64,7 @@
             font-weight: bold;
             text-align: center;
             margin-bottom: 5px;
+            margin-top: 10px;
         }
         .result-text {
             text-align: center;
@@ -103,136 +104,140 @@
             <div class="form-group">
                 <label for="concentration1">Concentration:</label>
                 <select name="concentration1" id="concentration1" class="form-control">
-                    <option value="African and African American Studies">African and African American Studies</option>
-                    <option value="Anthropology">Anthropology</option>
-                    <option value="Applied Math">Applied Math</option>
-                    <option value="Art, Film, and Visual Studies">Art, Film, and Visual Studies</option>
-                    <option value="Astrophysics">Astrophysics</option>
-                    <option value="Biomedical Engineering">Biomedical Engineering</option>
-                    <option value="Chemical and Physical Biology">Chemical and Physical Biology</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Chemistry and Physics">Chemistry and Physics</option>
-                    <option value="Classics">Classics</option>
-                    <option value="Comparative Literature">Comparative Literature</option>
-                    <option value="Comparative Study of Religion">Comparative Study of Religion</option>
-                    <option value="Computer Science">Computer Science</option>
-                    <option value="Earth and Planetary Sciences">Earth and Planetary Sciences</option>
-                    <option value="East Asian Studies">East Asian Studies</option>
-                    <option value="Economics">Economics</option>
-                    <option value="Electrical Engineering">Electrical Engineering</option>
-                    <option value="Engineering Sciences">Engineering Sciences</option>
-                    <option value="English">English</option>
-                    <option value="Environmental Science and Engineering">Environmental Science and Engineering</option>
-                    <option value="Environmental Science and Public Policy">Environmental Science and Public Policy</option>
-                    <option value="Folklore and Mythology">Folklore and Mythology</option>
-                    <option value="Germanic Languages and Literature">Germanic Languages and Literature</option>
-                    <option value="Government">Government</option>
-                    <option value="History">History</option>
-                    <option value="History and Literature">History and Literature</option>
-                    <option value="History and Science">History and Science</option>
-                    <option value="History of Art and Architecture">History of Art and Architecture</option>
-                    <option value="Human Developmental and Regenerative Biology">Human Developmental and Regenerative Biology</option>
-                    <option value="Human Evolutionary Biology">Human Evolutionary Biology</option>
-                    <option value="Integrative Biology">Integrative Biology</option>
-                    <option value="Linguistics">Linguistics</option>
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Mechanical Engineering">Mechanical Engineering</option>
-                    <option value="Molecular and Cellular Biology">Molecular and Cellular Biology</option>
-                    <option value="Music">Music</option>
-                    <option value="Near Eastern Languages and Civilizations">Near Eastern Languages and Civilizations</option>
-                    <option value="Neuroscience">Neuroscience</option>
-                    <option value="Philosophy">Philosophy</option>
-                    <option value="Physics">Physics</option>
-                    <option value="Psychology">Psychology</option>
-                    <option value="Romance Languages and Literature">Romance Languages and Literature</option>
-                    <option value="Slavic Literatures and Cultures">Slavic Literatures and Cultures</option>
-                    <option value="Social Studies">Social Studies</option>
-                    <option value="Sociology">Sociology</option>
-                    <option value="South Asian Studies">South Asian Studies</option>
-                    <option value="Statistics">Statistics</option>
-                    <option value="Studies of Women, Gender, and Sexuality">Studies of Women, Gender, and Sexuality</option>
-                    <option value="Special Concentration">Special Concentrations</option>
-                    <option value="Theater, Dance & Media">Theater, Dance & Media</option>
+                    <option value=""></option>
+                    <option value="African and African American Studies" {% if person['Concentration 1'] == 'African and African American Studies' %}selected{% endif %}>African and African American Studies</option>
+                    <option value="Anthropology" {% if person['Concentration 1'] == 'Anthropology' %}selected{% endif %}>Anthropology</option>
+                    <option value="Applied Math" {% if person['Concentration 1'] == 'Applied Math' %}selected{% endif %}>Applied Math</option>
+                    <option value="Art, Film, and Visual Studies" {% if person['Concentration 1'] == 'Art, Film, and Visual Studies' %}selected{% endif %}>Art, Film, and Visual Studies</option>
+                    <option value="Astrophysics" {% if person['Concentration 1'] == 'Astrophysics' %}selected{% endif %}>Astrophysics</option>
+                    <option value="Biomedical Engineering" {% if person['Concentration 1'] == 'Biomedical Engineering' %}selected{% endif %}>Biomedical Engineering</option>
+                    <option value="Chemical and Physical Biology" {% if person['Major'] == 'Chemical and Physical Biology' %}selected{% endif %}>Chemical and Physical Biology</option>
+                    <option value="Chemistry" {% if person['Concentration 1'] == 'Chemistry' %}selected{% endif %}>Chemistry</option>
+                    <option value="Chemistry and Physics" {% if person['Concentration 1'] == 'Chemistry and Physics' %}selected{% endif %}>Chemistry and Physics</option>
+                    <option value="Classics" {% if person['Concentration 1'] == 'Classics' %}selected{% endif %}>Classics</option>
+                    <option value="Comparative Literature" {% if person['Concentration 1'] == 'Comparative Literature' %}selected{% endif %}>Comparative Literature</option>
+                    <option value="Comparative Study of Religion" {% if person['Concentration 1'] == 'Comparative Study of Religion' %}selected{% endif %}>Comparative Study of Religion</option>
+                    <option value="Computer Science" {% if person['Concentration 1'] == 'Computer Science' %}selected{% endif %}>Computer Science</option>
+                    <option value="Earth and Planetary Sciences" {% if person['Concentration 1'] == 'Earth and Planetary Sciences' %}selected{% endif %}>Earth and Planetary Sciences</option>
+                    <option value="East Asian Studies" {% if person['Concentration 1'] == 'East Asian Studies' %}selected{% endif %}>East Asian Studies</option>
+                    <option value="Economics" {% if person['Concentration 1'] == 'Economics' %}selected{% endif %}>Economics</option>
+                    <option value="Electrical Engineering" {% if person['Concentration 1'] == 'Electrical Engineering' %}selected{% endif %}>Electrical Engineering</option>
+                    <option value="Engineering Sciences" {% if person['Concentration 1'] == 'Engineering Sciences' %}selected{% endif %}>Engineering Sciences</option>
+                    <option value="English" {% if person['Concentration 1'] == 'English' %}selected{% endif %}>English</option>
+                    <option value="Environmental Science and Engineering" {% if person['Concentration 1'] == 'Environmental Science and Engineering' %}selected{% endif %}>Environmental Science and Engineering</option>
+                    <option value="Environmental Science and Public Policy" {% if person['Concentration 1'] == 'Environmental Science and Public Policy' %}selected{% endif %}>Environmental Science and Public Policy</option>
+                    <option value="Folklore and Mythology" {% if person['Concentration 1'] == 'Folklore and Mythology' %}selected{% endif %}>Folklore and Mythology</option>
+                    <option value="Germanic Languages and Literature" {% if person['Concentration 1'] == 'Germanic Languages and Literature' %}selected{% endif %}>Germanic Languages and Literature</option>
+                    <option value="Government" {% if person['Concentration 1'] == 'Government' %}selected{% endif %}>Government</option>
+                    <option value="History" {% if person['Concentration 1'] == 'History' %}selected{% endif %}>History</option>
+                    <option value="History and Literature" {% if person['Concentration 1'] == 'History and Literature' %}selected{% endif %}>History and Literature</option>
+                    <option value="History and Science" {% if person['Concentration 1'] == 'History and Science' %}selected{% endif %}>History and Science</option>
+                    <option value="History of Art and Architecture" {% if person['Concentration 1'] == 'History of Art and Architecture' %}selected{% endif %}>History of Art and Architecture</option>
+                    <option value="Human Developmental and Regenerative Biology" {% if person['Concentration 1'] == 'Human Developmental and Regenerative Biology' %}selected{% endif %}>Human Developmental and Regenerative Biology</option>
+                    <option value="Human Evolutionary Biology" {% if person['Concentration 1'] == 'Human Evolutionary Biology' %}selected{% endif %}>Human Evolutionary Biology</option>
+                    <option value="Integrative Biology" {% if person['Concentration 1'] == 'Integrative Biology' %}selected{% endif %}>Integrative Biology</option>
+                    <option value="Linguistics" {% if person['Concentration 1'] == 'Linguistics' %}selected{% endif %}>Linguistics</option>
+                    <option value="Mathematics" {% if person['Concentration 1'] == 'Mathematics' %}selected{% endif %}>Mathematics</option>
+                    <option value="Mechanical Engineering" {% if person['Concentration 1'] == 'Mechanical Engineering' %}selected{% endif %}>Mechanical Engineering</option>
+                    <option value="Molecular and Cellular Biology" {% if person['Concentration 1'] == 'Molecular and Cellular Biology' %}selected{% endif %}>Molecular and Cellular Biology</option>
+                    <option value="Music" {% if person['Concentration 1'] == 'Music' %}selected{% endif %}>Music</option>
+                    <option value="Near Eastern Languages and Civilizations" {% if person['Concentration 1'] == 'Near Eastern Languages and Civilizations' %}selected{% endif %}>Near Eastern Languages and Civilizations</option>
+                    <option value="Neuroscience" {% if person['Concentration 1'] == 'Neuroscience' %}selected{% endif %}>Neuroscience</option>
+                    <option value="Philosophy" {% if person['Concentration 1'] == 'Philosophy' %}selected{% endif %}>Philosophy</option>
+                    <option value="Physics" {% if person['Concentration 1'] == 'Physics' %}selected{% endif %}>Physics</option>
+                    <option value="Psychology" {% if person['Concentration 1'] == 'Psychology' %}selected{% endif %}>Psychology</option>
+                    <option value="Romance Languages and Literature" {% if person['Concentration 1'] == 'Romance Languages and Literature' %}selected{% endif %}>Romance Languages and Literature</option>
+                    <option value="Slavic Literatures and Cultures" {% if person['Concentration 1'] == 'Slavic Literatures and Cultures' %}selected{% endif %}>Slavic Literatures and Cultures</option>
+                    <option value="Social Studies" {% if person['Concentration 1'] == 'Social Studies' %}selected{% endif %}>Social Studies</option>
+                    <option value="Sociology" {% if person['Concentration 1'] == 'Sociology' %}selected{% endif %}>Sociology</option>
+                    <option value="South Asian Studies" {% if person['Concentration 1'] == 'South Asian Studies' %}selected{% endif %}>South Asian Studies</option>
+                    <option value="Statistics" {% if person['Concentration 1'] == 'Statistics' %}selected{% endif %}>Statistics</option>
+                    <option value="Studies of Women, Gender, and Sexuality" {% if person['Concentration 1'] == 'Studies of Women, Gender, and Sexuality' %}selected{% endif %}>Studies of Women, Gender, and Sexuality</option>
+                    <option value="Special Concentrations" {% if person['Concentration 1'] == 'Special Concentrations' %}selected{% endif %}>Special Concentrations</option>
+                    <option value="Theater, Dance & Media" {% if person['Concentration 1'] == 'Theater, Dance & Media' %}selected{% endif %}>Theater, Dance & Media</option>
                 </select>
             </div>
 
             <label for="concentration2">Second Concentration (in a joint/double):</label>
-                <select name="concentration2" id="concentration2" class="form-control">
-                    <option value="African and African American Studies">African and African American Studies</option>
-                    <option value="Anthropology">Anthropology</option>
-                    <option value="Applied Math">Applied Math</option>
-                    <option value="Art, Film, and Visual Studies">Art, Film, and Visual Studies</option>
-                    <option value="Astrophysics">Astrophysics</option>
-                    <option value="Biomedical Engineering">Biomedical Engineering</option>
-                    <option value="Chemical and Physical Biology">Chemical and Physical Biology</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Chemistry and Physics">Chemistry and Physics</option>
-                    <option value="Classics">Classics</option>
-                    <option value="Comparative Literature">Comparative Literature</option>
-                    <option value="Comparative Study of Religion">Comparative Study of Religion</option>
-                    <option value="Computer Science">Computer Science</option>
-                    <option value="Earth and Planetary Sciences">Earth and Planetary Sciences</option>
-                    <option value="East Asian Studies">East Asian Studies</option>
-                    <option value="Economics">Economics</option>
-                    <option value="Electrical Engineering">Electrical Engineering</option>
-                    <option value="Engineering Sciences">Engineering Sciences</option>
-                    <option value="English">English</option>
-                    <option value="Environmental Science and Engineering">Environmental Science and Engineering</option>
-                    <option value="Environmental Science and Public Policy">Environmental Science and Public Policy</option>
-                    <option value="Folklore and Mythology">Folklore and Mythology</option>
-                    <option value="Germanic Languages and Literature">Germanic Languages and Literature</option>
-                    <option value="Government">Government</option>
-                    <option value="History">History</option>
-                    <option value="History and Literature">History and Literature</option>
-                    <option value="History and Science">History and Science</option>
-                    <option value="History of Art and Architecture">History of Art and Architecture</option>
-                    <option value="Human Developmental and Regenerative Biology">Human Developmental and Regenerative Biology</option>
-                    <option value="Human Evolutionary Biology">Human Evolutionary Biology</option>
-                    <option value="Integrative Biology">Integrative Biology</option>
-                    <option value="Linguistics">Linguistics</option>
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Mechanical Engineering">Mechanical Engineering</option>
-                    <option value="Molecular and Cellular Biology">Molecular and Cellular Biology</option>
-                    <option value="Music">Music</option>
-                    <option value="Near Eastern Languages and Civilizations">Near Eastern Languages and Civilizations</option>
-                    <option value="Neuroscience">Neuroscience</option>
-                    <option value="Philosophy">Philosophy</option>
-                    <option value="Physics">Physics</option>
-                    <option value="Psychology">Psychology</option>
-                    <option value="Romance Languages and Literature">Romance Languages and Literature</option>
-                    <option value="Slavic Literatures and Cultures">Slavic Literatures and Cultures</option>
-                    <option value="Social Studies">Social Studies</option>
-                    <option value="Sociology">Sociology</option>
-                    <option value="South Asian Studies">South Asian Studies</option>
-                    <option value="Statistics">Statistics</option>
-                    <option value="Studies of Women, Gender, and Sexuality">Studies of Women, Gender, and Sexuality</option>
-                    <option value="Special Concentration">Special Concentrations</option>
-                    <option value="Theater, Dance & Media">Theater, Dance & Media</option>
+            <select name="concentration2" id="concentration2" class="form-control">
+                    <option value=""></option>
+                    <option value="African and African American Studies" {% if person['Concentration 2'] == 'African and African American Studies' %}selected{% endif %}>African and African American Studies</option>
+                    <option value="Anthropology" {% if person['Concentration 2'] == 'Anthropology' %}selected{% endif %}>Anthropology</option>
+                    <option value="Applied Math" {% if person['Concentration 2'] == 'Applied Math' %}selected{% endif %}>Applied Math</option>
+                    <option value="Art, Film, and Visual Studies" {% if person['Concentration 2'] == 'Art, Film, and Visual Studies' %}selected{% endif %}>Art, Film, and Visual Studies</option>
+                    <option value="Astrophysics" {% if person['Concentration 2'] == 'Astrophysics' %}selected{% endif %}>Astrophysics</option>
+                    <option value="Biomedical Engineering" {% if person['Concentration 2'] == 'Biomedical Engineering' %}selected{% endif %}>Biomedical Engineering</option>
+                    <option value="Chemical and Physical Biology" {% if person['Concentration 2'] == 'Chemical and Physical Biology' %}selected{% endif %}>Chemical and Physical Biology</option>
+                    <option value="Chemistry" {% if person['Concentration 2'] == 'Chemistry' %}selected{% endif %}>Chemistry</option>
+                    <option value="Chemistry and Physics" {% if person['Concentration 2'] == 'Chemistry and Physics' %}selected{% endif %}>Chemistry and Physics</option>
+                    <option value="Classics" {% if person['Concentration 2'] == 'Classics' %}selected{% endif %}>Classics</option>
+                    <option value="Comparative Literature" {% if person['Concentration 2'] == 'Comparative Literature' %}selected{% endif %}>Comparative Literature</option>
+                    <option value="Comparative Study of Religion" {% if person['Concentration 2'] == 'Comparative Study of Religion' %}selected{% endif %}>Comparative Study of Religion</option>
+                    <option value="Computer Science" {% if person['Concentration 2'] == 'Computer Science' %}selected{% endif %}>Computer Science</option>
+                    <option value="Earth and Planetary Sciences" {% if person['Concentration 2'] == 'Earth and Planetary Sciences' %}selected{% endif %}>Earth and Planetary Sciences</option>
+                    <option value="East Asian Studies" {% if person['Concentration 2'] == 'East Asian Studies' %}selected{% endif %}>East Asian Studies</option>
+                    <option value="Economics" {% if person['Concentration 2'] == 'Economics' %}selected{% endif %}>Economics</option>
+                    <option value="Electrical Engineering" {% if person['Concentration 2'] == 'Electrical Engineering' %}selected{% endif %}>Electrical Engineering</option>
+                    <option value="Engineering Sciences" {% if person['Concentration 2'] == 'Engineering Sciences' %}selected{% endif %}>Engineering Sciences</option>
+                    <option value="English" {% if person['Concentration 2'] == 'English' %}selected{% endif %}>English</option>
+                    <option value="Environmental Science and Engineering" {% if person['Concentration 2'] == 'Environmental Science and Engineering' %}selected{% endif %}>Environmental Science and Engineering</option>
+                    <option value="Environmental Science and Public Policy" {% if person['Concentration 2'] == 'Environmental Science and Public Policy' %}selected{% endif %}>Environmental Science and Public Policy</option>
+                    <option value="Folklore and Mythology" {% if person['Concentration 2'] == 'Folklore and Mythology' %}selected{% endif %}>Folklore and Mythology</option>
+                    <option value="Germanic Languages and Literature" {% if person['Concentration 2'] == 'Germanic Languages and Literature' %}selected{% endif %}>Germanic Languages and Literature</option>
+                    <option value="Government" {% if person['Concentration 2'] == 'Government' %}selected{% endif %}>Government</option>
+                    <option value="History" {% if person['Concentration 2'] == 'History' %}selected{% endif %}>History</option>
+                    <option value="History and Literature" {% if person['Concentration 2'] == 'History and Literature' %}selected{% endif %}>History and Literature</option>
+                    <option value="History and Science" {% if person['Concentration 2'] == 'History and Science' %}selected{% endif %}>History and Science</option>
+                    <option value="History of Art and Architecture" {% if person['Concentration 2'] == 'History of Art and Architecture' %}selected{% endif %}>History of Art and Architecture</option>
+                    <option value="Human Developmental and Regenerative Biology" {% if person['Concentration 2'] == 'Human Developmental and Regenerative Biology' %}selected{% endif %}>Human Developmental and Regenerative Biology</option>
+                    <option value="Human Evolutionary Biology" {% if person['Concentration 2'] == 'Human Evolutionary Biology' %}selected{% endif %}>Human Evolutionary Biology</option>
+                    <option value="Integrative Biology" {% if person['Concentration 2'] == 'Integrative Biology' %}selected{% endif %}>Integrative Biology</option>
+                    <option value="Linguistics" {% if person['Concentration 2'] == 'Linguistics' %}selected{% endif %}>Linguistics</option>
+                    <option value="Mathematics" {% if person['Concentration 2'] == 'Mathematics' %}selected{% endif %}>Mathematics</option>
+                    <option value="Mechanical Engineering" {% if person['Concentration 2'] == 'Mechanical Engineering' %}selected{% endif %}>Mechanical Engineering</option>
+                    <option value="Molecular and Cellular Biology" {% if person['Concentration 2'] == 'Molecular and Cellular Biology' %}selected{% endif %}>Molecular and Cellular Biology</option>
+                    <option value="Music" {% if person['Concentration 2'] == 'Music' %}selected{% endif %}>Music</option>
+                    <option value="Near Eastern Languages and Civilizations" {% if person['Concentration 2'] == 'Near Eastern Languages and Civilizations' %}selected{% endif %}>Near Eastern Languages and Civilizations</option>
+                    <option value="Neuroscience" {% if person['Concentration 2'] == 'Neuroscience' %}selected{% endif %}>Neuroscience</option>
+                    <option value="Philosophy" {% if person['Concentration 2'] == 'Philosophy' %}selected{% endif %}>Philosophy</option>
+                    <option value="Physics" {% if person['Concentration 2'] == 'Physics' %}selected{% endif %}>Physics</option>
+                    <option value="Psychology" {% if person['Concentration 2'] == 'Psychology' %}selected{% endif %}>Psychology</option>
+                    <option value="Romance Languages and Literature" {% if person['Concentration 2'] == 'Romance Languages and Literature' %}selected{% endif %}>Romance Languages and Literature</option>
+                    <option value="Slavic Literatures and Cultures" {% if person['Concentration 2'] == 'Slavic Literatures and Cultures' %}selected{% endif %}>Slavic Literatures and Cultures</option>
+                    <option value="Social Studies" {% if person['Concentration 2'] == 'Social Studies' %}selected{% endif %}>Social Studies</option>
+                    <option value="Sociology" {% if person['Concentration 2'] == 'Sociology' %}selected{% endif %}>Sociology</option>
+                    <option value="South Asian Studies" {% if person['Concentration 2'] == 'South Asian Studies' %}selected{% endif %}>South Asian Studies</option>
+                    <option value="Statistics" {% if person['Concentration 2'] == 'Statistics' %}selected{% endif %}>Statistics</option>
+                    <option value="Studies of Women, Gender, and Sexuality" {% if person['Concentration 2'] == 'Studies of Women, Gender, and Sexuality' %}selected{% endif %}>Studies of Women, Gender, and Sexuality</option>
+                    <option value="Special Concentrations" {% if person['Concentration 2'] == 'Special Concentrations' %}selected{% endif %}>Special Concentrations</option>
+                    <option value="Theater, Dance & Media" {% if person['Concentration 2'] == 'Theater, Dance & Media' %}selected{% endif %}>Theater, Dance & Media</option>
                 </select>
 
             <label for="house">House:</label>
             <select name="house" id="house" class="form-control">
-                <option value="Adams House">Adams House</option>
-                <option value="Cabot House">Cabot House</option>
-                <option value="Currier House">Currier House</option>
-                <option value="Dunster House">Dunster House</option>
-                <option value="Eliot House">Eliot House</option>
-                <option value="Kirkland House">Kirkland House</option>
-                <option value="Leverett House">Leverett House</option>
-                <option value="Lowell House">Lowell House</option>
-                <option value="Mather House">Mather House</option>
-                <option value="Pforzheimer House">Pforzheimer House</option>
-                <option value="Quincy House">Quincy House</option>
-                <option value="Winthrop House">Winthrop House</option>
-                <option value="Dudley Co-Op">Dudley Co-Op</option>
+                <option value=""></option>
+                <option value="Adams House" {% if person['House'] == 'Adams' %}selected{% endif %}>Adams House</option>
+                <option value="Cabot House" {% if person['House'] == 'Cabot' %}selected{% endif %}>Cabot House</option>
+                <option value="Currier House" {% if person['House'] == 'Currier' %}selected{% endif %}>Currier House</option>
+                <option value="Dunster House" {% if person['House'] == 'Dunster' %}selected{% endif %}>Dunster House</option>
+                <option value="Eliot House" {% if person['House'] == 'Eliot' %}selected{% endif %}>Eliot House</option>
+                <option value="Kirkland House" {% if person['House'] == 'Kirkland' %}selected{% endif %}>Kirkland House</option>
+                <option value="Leverett House" {% if person['House'] == 'Leverett' %}selected{% endif %}>Leverett House</option>
+                <option value="Lowell House" {% if person['House'] == 'Lowell' %}selected{% endif %}>Lowell House</option>
+                <option value="Mather House" {% if person['House'] == 'Mather' %}selected{% endif %}>Mather House</option>
+                <option value="Pforzheimer House" {% if person['House'] == 'Pforzheimer' %}selected{% endif %}>Pforzheimer House</option>
+                <option value="Quincy House" {% if person['House'] == 'Quincy' %}selected{% endif %}>Quincy House</option>
+                <option value="Winthrop House" {% if person['House'] == 'Winthrop' %}selected{% endif %}>Winthrop House</option>
+                <option value="Dudley Co-Op" {% if person['House'] == 'Dudley' %}selected{% endif %}>Dudley Co-Op</option>
             </select>
 
             <label for="year">Academic Year:</label>
             <select name="year" id="year" class="form-control">
-                <option value="Year 1">2024</option>
-                <option value="Year 2">2025</option>
-                <option value="Year 3">2026</option>
-                <option value="Year 4">2027</option>
+                <option value=""></option>
+                <option value="Senior" {% if person['Year'] == 'Senior' %}selected{% endif %}>2024</option>
+                <option value="Junior" {% if person['Year'] == 'Junior' %}selected{% endif %}>2025</option>
+                <option value="Sophomore" {% if person['Year'] == 'Sophomore' %}selected{% endif %}>2026</option>
+                <!-- <option value="First-year" {% if person['Year'] == 'First-year' %}selected{% endif %}>2027</option> -->
             </select>
 
             <!-- <label for="hometown">Hometown:</label>
