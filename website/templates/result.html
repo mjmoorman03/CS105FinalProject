@@ -23,6 +23,7 @@
             font-size: 48px;
             margin-bottom: 20px;
         }
+        
         .form-container {
             max-width: 400px;
             margin: 0 auto;
@@ -212,6 +213,27 @@
                     <option value="Special Concentrations" {% if person['Concentration 2'] == 'Special Concentrations' %}selected{% endif %}>Special Concentrations</option>
                     <option value="Theater, Dance & Media" {% if person['Concentration 2'] == 'Theater, Dance & Media' %}selected{% endif %}>Theater, Dance & Media</option>
                 </select>
+
+            
+                <style>
+                    .checkboxes {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      vertical-align: middle;
+                      word-wrap: break-word;
+                      margin-right: 30px;
+                      margin-left: 30px;
+                    }
+            </style>
+
+            <div class="checkboxes">
+            <label for="double">Double?</label>
+            <input type="checkbox" class="checkboxes" id="double" name="double" value="double">
+
+            <label for="joint?">Joint?</label>
+            <input type="checkbox" class="checkboxes" id="joint" name="joint" value="joint">
+            </div>
 
             <label for="house">House:</label>
             <select name="house" id="house" class="form-control">
