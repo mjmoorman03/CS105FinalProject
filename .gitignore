@@ -1,2 +1,3 @@
 105facebook.csv
 *.csv
+__pycache__

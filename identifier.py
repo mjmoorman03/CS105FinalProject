@@ -18,17 +18,17 @@ def match(person1: dict, person2: dict):
 def identifyIndividual(person: dict, data):
     # returns a list of the names of the people who match the person
     # if no one matches, returns an empty list
-    matches = [p['Name'] for p in data if match(person, p)]
+    matches = [(p['Name'], p['Email']) for p in data if match(person, p)]
     return matches
 
 
-def uniqueMatches(matches: List[Tuple]) -> List[Tuple]:
-    # returns a list of the names of the people who match exactly one person, and the row they match
+def uniqueMatches(matches: List[Tuple], k: int=1) -> List[Tuple]:
+    # returns a list of the names of the people who match 0 < x <= k person, and the row they match
     # if no one matches, returns an empty list
     uniqueMatches = []
     for match in matches:
-        if len(match[1]) == 1:
-            uniqueMatches.append((match[0], match[1][0]))
+        if len(match[1]) <= k and len(match[1]) > 0:
+            uniqueMatches.append((match[0], match[1][0][0], match[1][0][1]))
     return uniqueMatches
 
 
@@ -49,10 +49,12 @@ def main():
     for person in surveyData:
         matches.append((person, identifyIndividual(person, facebookData)))
     # find unique matches
-    unique = uniqueMatches(matches)
+    unique = uniqueMatches(matches, 1)
     # print out the results
     print(f'Found {len(unique)} unique matches')
     print(f'Out of {len(surveyData)} responses')
+    for match in unique:
+        print(f'{match[1]}, {match[2]}')
     f.close()
     s.close()
 

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>K, where's my Anonymity?</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial Rounded MT', Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #f8f9fa;
+            height: 80px;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .navbar-nav.ml-auto > .nav-item {
+            margin-left: auto;
+        }
+        .header {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-container select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .large-number {
+            font-size: 72px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        .result-text {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="/">K, where's my Anonymity?</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Re-Identifier</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/protect">Protect Yourself</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="header">
+        <h1 class="large-number">{{ numMatches }}</h1>
+        <p class="result-text">Harvard students that match these characteristics</p>
+    </div>
+    <div class="form-container">
+        <form action="/result" method="POST">
+            <div class="form-group">
+                <label for="concentration1">Concentration:</label>
+                <select name="concentration1" id="concentration1" class="form-control">
+                    <option value=""></option>
+                    <option value="African and African American Studies">African and African American Studies</option>
+                    <option value="Anthropology">Anthropology</option>
+                    <option value="Applied Mathematics">Applied Mathematics</option>
+                    <option value="Art, Film, and Visual Studies">Art, Film, and Visual Studies</option>
+                    <option value="Astrophysics">Astrophysics</option>
+                    <option value="Biomedical Engineering">Biomedical Engineering</option>
+                    <option value="Chemical and Physical Biology">Chemical and Physical Biology</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Chemistry and Physics">Chemistry and Physics</option>
+                    <option value="Classics">Classics</option>
+                    <option value="Comparative Literature">Comparative Literature</option>
+                    <option value="Comparative Study of Religion">Comparative Study of Religion</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Earth and Planetary Sciences">Earth and Planetary Sciences</option>
+                    <option value="East Asian Studies">East Asian Studies</option>
+                    <option value="Economics">Economics</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Engineering Sciences">Engineering Sciences</option>
+                    <option value="English">English</option>
+                    <option value="Environmental Science and Engineering">Environmental Science and Engineering</option>
+                    <option value="Environmental Science and Public Policy">Environmental Science and Public Policy</option>
+                    <option value="Folklore and Mythology">Folklore and Mythology</option>
+                    <option value="Germanic Languages and Literature">Germanic Languages and Literature</option>
+                    <option value="Government">Government</option>
+                    <option value="History">History</option>
+                    <option value="History and Literature">History and Literature</option>
+                    <option value="History and Science">History and Science</option>
+                    <option value="History of Art and Architecture">History of Art and Architecture</option>
+                    <option value="Human Developmental and Regenerative Biology">Human Developmental and Regenerative Biology</option>
+                    <option value="Human Evolutionary Biology">Human Evolutionary Biology</option>
+                    <option value="Integrative Biology">Integrative Biology</option>
+                    <option value="Linguistics">Linguistics</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Molecular and Cellular Biology">Molecular and Cellular Biology</option>
+                    <option value="Music">Music</option>
+                    <option value="Near Eastern Languages and Civilizations">Near Eastern Languages and Civilizations</option>
+                    <option value="Neuroscience">Neuroscience</option>
+                    <option value="Philosophy">Philosophy</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Psychology">Psychology</option>
+                    <option value="Romance Languages and Literature">Romance Languages and Literature</option>
+                    <option value="Slavic Literatures and Cultures">Slavic Literatures and Cultures</option>
+                    <option value="Social Studies">Social Studies</option>
+                    <option value="Sociology">Sociology</option>
+                    <option value="South Asian Studies">South Asian Studies</option>
+                    <option value="Statistics">Statistics</option>
+                    <option value="Studies of Women, Gender, and Sexuality">Studies of Women, Gender, and Sexuality</option>
+                    <option value="Special Concentrations">Special Concentrations</option>
+                    <option value="Theater, Dance & Media">Theater, Dance & Media</option>
+                </select>
+            </div>
+
+            <label for="concentration2">Second Concentration (in a joint/double):</label>
+                <select name="concentration2" id="concentration2" class="form-control">
+                    <option value=""></option>
+                    <option value="African and African American Studies">African and African American Studies</option>
+                    <option value="Anthropology">Anthropology</option>
+                    <option value="Applied Mathematics">Applied Mathematics</option>
+                    <option value="Art, Film, and Visual Studies">Art, Film, and Visual Studies</option>
+                    <option value="Astrophysics">Astrophysics</option>
+                    <option value="Biomedical Engineering">Biomedical Engineering</option>
+                    <option value="Chemical and Physical Biology">Chemical and Physical Biology</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Chemistry and Physics">Chemistry and Physics</option>
+                    <option value="Classics">Classics</option>
+                    <option value="Comparative Literature">Comparative Literature</option>
+                    <option value="Comparative Study of Religion">Comparative Study of Religion</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Earth and Planetary Sciences">Earth and Planetary Sciences</option>
+                    <option value="East Asian Studies">East Asian Studies</option>
+                    <option value="Economics">Economics</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Engineering Sciences">Engineering Sciences</option>
+                    <option value="English">English</option>
+                    <option value="Environmental Science and Engineering">Environmental Science and Engineering</option>
+                    <option value="Environmental Science and Public Policy">Environmental Science and Public Policy</option>
+                    <option value="Folklore and Mythology">Folklore and Mythology</option>
+                    <option value="Germanic Languages and Literature">Germanic Languages and Literature</option>
+                    <option value="Government">Government</option>
+                    <option value="History">History</option>
+                    <option value="History and Literature">History and Literature</option>
+                    <option value="History and Science">History and Science</option>
+                    <option value="History of Art and Architecture">History of Art and Architecture</option>
+                    <option value="Human Developmental and Regenerative Biology">Human Developmental and Regenerative Biology</option>
+                    <option value="Human Evolutionary Biology">Human Evolutionary Biology</option>
+                    <option value="Integrative Biology">Integrative Biology</option>
+                    <option value="Linguistics">Linguistics</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Molecular and Cellular Biology">Molecular and Cellular Biology</option>
+                    <option value="Music">Music</option>
+                    <option value="Near Eastern Languages and Civilizations">Near Eastern Languages and Civilizations</option>
+                    <option value="Neuroscience">Neuroscience</option>
+                    <option value="Philosophy">Philosophy</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Psychology">Psychology</option>
+                    <option value="Romance Languages and Literature">Romance Languages and Literature</option>
+                    <option value="Slavic Literatures and Cultures">Slavic Literatures and Cultures</option>
+                    <option value="Social Studies">Social Studies</option>
+                    <option value="Sociology">Sociology</option>
+                    <option value="South Asian Studies">South Asian Studies</option>
+                    <option value="Statistics">Statistics</option>
+                    <option value="Studies of Women, Gender, and Sexuality">Studies of Women, Gender, and Sexuality</option>
+                    <option value="Special Concentrations">Special Concentrations</option>
+                    <option value="Theater, Dance & Media">Theater, Dance & Media</option>
+                </select>
+            
+            <style>
+                    .checkboxes {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      vertical-align: middle;
+                      word-wrap: break-word;
+                      margin-right: 30px;
+                      margin-left: 30px;
+                    }
+            </style>
+
+            <div class="checkboxes">
+            <label for="double">Double?</label>
+            <input type="checkbox" class="checkboxes" id="double" name="double" value="double">
+
+            <label for="joint">Joint?</label>
+            <input type="checkbox" class="checkboxes" id="joint" name="joint" value="joint">
+            </div>
+
+            <label for="house">House:</label>
+            <select name="house" id="house" class="form-control">
+                <option value=""></option>
+                <option value="Adams House">Adams House</option>
+                <option value="Cabot House">Cabot House</option>
+                <option value="Currier House">Currier House</option>
+                <option value="Dunster House">Dunster House</option>
+                <option value="Eliot House">Eliot House</option>
+                <option value="Kirkland House">Kirkland House</option>
+                <option value="Leverett House">Leverett House</option>
+                <option value="Lowell House">Lowell House</option>
+                <option value="Mather House">Mather House</option>
+                <option value="Pforzheimer House">Pforzheimer House</option>
+                <option value="Quincy House">Quincy House</option>
+                <option value="Winthrop House">Winthrop House</option>
+                <option value="Dudley Co-Op">Dudley Co-Op</option>
+            </select>
+
+            <label for="year">Academic Year:</label>
+            <select name="year" id="year" class="form-control">
+                <option value=""></option>
+                <option value="Senior">2024</option>
+                <option value="Junior">2025</option>
+                <option value="Sophomore">2026</option>
+                <!-- <option value="First-year">2027</option> -->
+            </select>
+
+            <!-- <label for="hometown">Hometown:</label>
+            <input type="text" name="hometown" id="hometown" class="form-control">
+            
+            <label for="home_country">Home Country:</label>
+            <input type="text" name="home_country" id="home_country" class="form-control"> -->
+
+            <button type="submit" class="btn btn-primary">Re-Identify Me!</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
